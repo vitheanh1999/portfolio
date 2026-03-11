@@ -40,7 +40,7 @@ export function Hero() {
           
           <motion.h1 variants={itemVars} className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gradient font-display">
             Hi, I&apos;m {name} <br/>
-            <span className="text-foreground">Building AI-powered <br/> <span className="text-transparent bg-clip-text bg-linear-to-r from-neutral-200 to-neutral-500">Digital Experiences.</span></span>
+            <span className="text-foreground">Crafting Intelligent <br/> <span className="text-transparent bg-clip-text bg-linear-to-r from-neutral-200 to-neutral-500">Digital Solutions.</span></span>
           </motion.h1>
 
           <motion.p variants={itemVars} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">

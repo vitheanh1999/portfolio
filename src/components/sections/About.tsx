@@ -1,9 +1,51 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
+import { Code2, FolderGit2, Database, BrainCircuit } from "lucide-react";
 
 export function About() {
+  const statsContainerVars: Variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const statCardVars: Variants = {
+    hidden: { opacity: 0, scale: 0.95, y: 15 },
+    show: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 120 } },
+  };
+
+  const statItems = [
+    {
+      icon: <Code2 className="h-6 w-6 text-primary" />,
+      value: "5+ Years",
+      label: "Full-Stack Dev",
+      colSpan: 1
+    },
+    {
+      icon: <FolderGit2 className="h-6 w-6 text-primary" />,
+      value: "20+",
+      label: "Projects Delivered",
+      colSpan: 1
+    },
+    {
+      icon: <Database className="h-6 w-6 text-primary" />,
+      value: "Massive Base",
+      label: "Scraping & Pipelines",
+      colSpan: 1
+    },
+    {
+      icon: <BrainCircuit className="h-6 w-6 text-[#8D5CF6]" />,
+      value: "AI / LLM",
+      label: "System Integrations",
+      colSpan: 1
+    }
+  ];
   return (
     <section id="about" className="py-20 relative">
       <div className="container px-4 md:px-6 mx-auto max-w-5xl">
@@ -31,27 +73,33 @@ export function About() {
               </p>
             </div>
 
-            <div className="glass-card p-8 space-y-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl -mr-10 -mt-10" />
-              <h3 className="text-xl font-semibold text-foreground">Quick Stats</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <div className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="font-medium text-foreground">5+ Years</span>
-                  <span className="text-muted-foreground">of Experience</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="font-medium text-foreground">Full-Stack</span>
-                  <span className="text-muted-foreground">Development</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="font-medium text-foreground">AI / LLM</span>
-                  <span className="text-muted-foreground">System Integration</span>
-                </li>
-              </ul>
-            </div>
+            <motion.div 
+              variants={statsContainerVars}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-50px" }}
+              className="grid grid-cols-2 gap-4 relative"
+            >
+              {/* Background Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-primary/20 rounded-full blur-[80px] pointer-events-none -z-10" />
+              
+              {statItems.map((stat, idx) => (
+                <motion.div 
+                  key={idx}
+                  variants={statCardVars}
+                  className="glass-card p-5 space-y-3 relative overflow-hidden group hover:border-primary/40 transition-colors"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    {stat.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-bold text-foreground tracking-tight group-hover:text-primary transition-colors">{stat.value}</h4>
+                    <p className="text-sm text-muted-foreground mt-1 leading-snug">{stat.label}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </motion.div>
       </div>

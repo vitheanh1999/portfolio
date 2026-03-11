@@ -7,8 +7,8 @@ export function AIAutomation() {
   const capabilities = [
     {
       icon: <Bot className="h-6 w-6" />,
-      title: "AI Agents & LLMs",
-      description: "Integrating powerful LLMs into production workflows, developing conversational interfaces, and creating autonomous agents for automated code refactoring and data processing."
+      title: "AI Tools & LLM Integration",
+      description: "Leveraging powerful LLMs and AI tools to enhance workflows, optimize data processing, and build intelligent features into existing software."
     },
     {
       icon: <Workflow className="h-6 w-6" />,
@@ -45,10 +45,10 @@ export function AIAutomation() {
             Specialized Skills
           </div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-display">
-            AI Engineering & Automation
+            AI Integrations & Automation
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Beyond traditional full-stack development, I specialize in building intelligent systems that automate complex workflows and scale seamlessly.
+            Beyond traditional full-stack development, I focus on integrating cutting-edge AI models and LLM tools to automate complex workflows and boost productivity.
           </p>
         </motion.div>
 

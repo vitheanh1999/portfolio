@@ -67,13 +67,19 @@ export function Experience() {
                   </div>
                 )}
 
-                {exp.projects && exp.projects.map((proj, pIdx) => (
-                   <div key={pIdx} className="glass p-4 rounded-xl">
-                      <h4 className="font-semibold text-foreground mb-1">{proj.name}</h4>
-                      <p className="text-sm text-muted-foreground">{proj.description}</p>
+                {exp.projects && exp.projects.map((proj: { name: string, role?: string, description?: string, responsibilities?: string[], techStack?: string[] }, pIdx: number) => (
+                   <div key={pIdx} className="glass p-4 rounded-xl mt-4 first:mt-0">
+                      <h4 className="font-semibold text-primary mb-1">{proj.name}</h4>
+                      {proj.role && <p className="text-sm text-foreground mb-2 font-medium">{proj.role}</p>}
+                      {proj.description && <p className="text-sm text-muted-foreground">{proj.description}</p>}
+                      {proj.responsibilities && (
+                        <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1 mt-2">
+                           {proj.responsibilities.map((res: string, i: number) => <li key={i}>{res}</li>)}
+                        </ul>
+                      )}
                       {proj.techStack && (
-                        <div className="flex flex-wrap gap-2 mt-3">
-                          {proj.techStack.map(t => <span key={t} className="text-xs bg-white/5 text-muted-foreground px-2 py-1 rounded border border-white/5">{t}</span>)}
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {proj.techStack.map((t: string) => <span key={t} className="text-xs bg-white/5 text-muted-foreground px-2 py-1 rounded border border-white/5">{t}</span>)}
                         </div>
                       )}
                    </div>

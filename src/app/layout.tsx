@@ -9,7 +9,7 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
   title: "Ví Thế Anh - Developer Portfolio",
-  description: "Modern portfolio of a Fullstack Developer and AI Engineer specializing in large-scale data scraping and system architecture.",
+  description: "Modern portfolio of a Fullstack Developer specializing in large-scale data scraping, system architecture, and AI tool integrations.",
 };
 
 export default function RootLayout({
