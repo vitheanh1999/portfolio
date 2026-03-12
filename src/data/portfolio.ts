@@ -18,11 +18,15 @@ export const portfolioData = {
   },
   externalProjects: [
     {
-      name: "R&B Mobile App",
+      name: "VBM F&B",
       role: "Freelance Developer",
-      description: "Developed and published the R&B mobile app to both the App Store and Google Play.",
+      featured: true,
+      description: "Developed and published a full-featured F&B franchise management app to both the App Store and Google Play. The app enables restaurant chains to manage orders, franchises, and customer engagement.",
       techStack: ["React Native", "Expo", "iOS", "Android"],
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop",
+      icon: "https://play-lh.googleusercontent.com/Mpt8U-3T0ib4crgwJ-K7aBUAwhTW4XP7fSYdHp_o0eOIhVtRP_xnkYWaOb50Rn92Ug",
+      appStore: "https://apps.apple.com/vn/app/vbm-f-b/id6502171915?l=vi",
+      googlePlay: "https://play.google.com/store/apps/details?id=com.vbm&hl=vi",
     },
     {
       name: "E-commerce Zalo Mini App",
@@ -32,14 +36,7 @@ export const portfolioData = {
       image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=800&auto=format&fit=crop"
     },
     {
-      name: "Lead Generation Websites",
-      role: "Freelance Developer",
-      description: "Created lead-generation websites integrating HubSpot CRM for automated email campaigns and customer tracking.",
-      techStack: ["HubSpot CRM", "Marketing Automation", "Web Design"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
-    },
-    {
-      name: "Custom E-commerce Sites",
+      name: "E-commerce Sites",
       role: "Freelance Developer",
       description: "Designed and implemented custom e-commerce web architectures using WordPress.",
       techStack: ["WordPress", "PHP", "WooCommerce"],

@@ -2,8 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 
 export function Hero() {
   const { name, roles } = portfolioData.personalDetails;
@@ -48,14 +47,21 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={itemVars} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button size="lg" className="rounded-full h-12 px-8 group relative overflow-hidden bg-white text-black hover:bg-neutral-200 transition-all">
-              <span className="relative z-10 flex items-center font-medium">
-                View My Work <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full h-12 px-8 border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all text-white">
-              <Download className="mr-2 h-4 w-4" /> Download CV
-            </Button>
+            <a 
+              href="/cv.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full h-12 px-8 group relative overflow-hidden bg-white text-black hover:bg-neutral-200 transition-all font-medium text-sm"
+            >
+              View CV <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+            
+            <a 
+              href={`mailto:${portfolioData.personalDetails.email}`}
+              className="inline-flex items-center justify-center rounded-full h-12 px-8 border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all text-white font-medium text-sm"
+            >
+              <Mail className="mr-2 h-4 w-4" /> Get in Touch
+            </a>
           </motion.div>
 
           <motion.div variants={itemVars} className="flex items-center justify-center gap-6 pt-10 text-muted-foreground">
