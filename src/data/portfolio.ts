@@ -1,6 +1,6 @@
 export const portfolioData = {
   personalDetails: {
-    name: "Vi The Anh",
+    name: "The Anh",
     email: "vianh1999bg@gmail.com",
     phone: "0969.468.213",
     roles: ["Fullstack Developer", "AI Integration Specialist"],
